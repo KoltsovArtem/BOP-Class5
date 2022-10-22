@@ -61,7 +61,7 @@ public class Tests
 
         ProcessFiles(schemaFile, dataFile1, outputFile);
         That(ReadFile(outputFile), Is.EqualTo(new string[] { "2*4/3=2", "5*2*1*2=20", "1/0 *** DIVBYZERO", "5/5*2=2" }));
-        Catch<IncorrectFormatOfLines>(() => { ProcessFiles(schemaFile, dataFile2, outputFile); });
+        Catch<IncorrectFormatOfLine>(() => { ProcessFiles(schemaFile, dataFile2, outputFile); });
         Catch<NotEnoughNumbers>(() => { ProcessFiles(schemaFile, dataFile3, outputFile); });
         Catch<DifferentNumberOfLines>(() => { ProcessFiles(schemaFile, dataFile4, outputFile); });
     }

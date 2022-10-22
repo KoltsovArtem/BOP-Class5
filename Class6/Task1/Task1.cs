@@ -30,9 +30,9 @@ namespace Task1
     }
 
     // Некорректный формат строк во входных файлах
-    class IncorrectFormatOfLines : Exception
+    class IncorrectFormatOfLine : Exception
     {
-        public IncorrectFormatOfLines(string line, int numberLine) : base($"Incorrect format in line {numberLine}: ${line}") { }
+        public IncorrectFormatOfLine(string line, int numberLine) : base($"Incorrect format in line {numberLine}: ${line}") { }
     }
 
     /* Несоответствие количества чисел в соответствующей 
@@ -130,7 +130,7 @@ namespace Task1
 
             catch (FormatException)
             {
-                throw new IncorrectFormatOfLines(input, line);
+                throw new IncorrectFormatOfLine(input, line);
             }
 
 
